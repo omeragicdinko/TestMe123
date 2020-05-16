@@ -2,21 +2,21 @@ package com.example.TestMe;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class AddQuestion extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_add_question);
     }
 
-    public void onAdmin(View view){
-        Intent intent = new Intent(this, Admin.class);
+    public void onCancel(View view){
+
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
 }
