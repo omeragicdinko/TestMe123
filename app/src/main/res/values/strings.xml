@@ -17,6 +17,12 @@
     <string name="enter_answer_two">Please enter choice 2</string>
     <string name="enter_answer_three">Please enter choice 3</string>
     <string name="enter_answer_four">Please enter choice 4</string>
+    <string name="question_category_text">Category:</string>
+    <string name="enter_question_category">Please enter question category</string>
+    <string name="available_category">Available categories:</string>
+    <string name="geograpgy_category_text">Geography</string>
+    <string name="history_category_text">History</string>
+    <string name="guideline_text">Please select your answer below:</string>
 
 
 </resources>

@@ -19,4 +19,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Admin.class);
         startActivity(intent);
     }
+    public void onQuiz(View view){
+        Intent intent = new Intent(this, SelectCategoryActivity.class);
+        startActivity(intent);
+    }
 }

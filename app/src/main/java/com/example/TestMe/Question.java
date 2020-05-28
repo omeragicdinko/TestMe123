@@ -7,15 +7,17 @@ public class Question {
     private String choice_two;
     private String choice_three;
     private String choice_four;
+    private String category;
 
 
-    public Question(int id, String question_text, String choice_one, String choice_two, String choice_three, String choice_four) {
+    public Question(int id, String question_text, String choice_one, String choice_two, String choice_three, String choice_four, String category) {
         this.id = id;
         this.question_text = question_text;
         this.choice_one = choice_one;
         this.choice_two = choice_two;
         this.choice_three = choice_three;
         this.choice_four = choice_four;
+        this.category = category;
     }
 
     public String getChoice_three() {
@@ -24,6 +26,14 @@ public class Question {
 
     public void setChoice_three(String choice_three) {
         this.choice_three = choice_three;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getId() {

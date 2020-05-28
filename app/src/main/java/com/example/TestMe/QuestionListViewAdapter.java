@@ -44,11 +44,13 @@ public class QuestionListViewAdapter extends BaseAdapter {
         TextView choiceTwo = convertView.findViewById(R.id.choice_two_list);
         TextView choiceThree = convertView.findViewById(R.id.choice_three_list);
         TextView choiceFour = convertView.findViewById(R.id.choice_four_list);
+        TextView category = convertView.findViewById(R.id.category_list);
         questionText.setText("Question: " +question.getQuestion_text());
         choiceOne.setText("Choice 1 (Correct): " +question.getChoice_one());
         choiceTwo.setText("Choice 2: " +question.getChoice_two());
         choiceThree.setText("Choice 3: " +question.getChoice_three());
         choiceFour.setText("Choice 4: " +question.getChoice_four());
+        category.setText("Category: " +question.getCategory());
 
 
         return convertView;
