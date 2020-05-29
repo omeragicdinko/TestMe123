@@ -1,7 +1,10 @@
 package com.example.TestMe;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +18,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class QuizActivity extends AppCompatActivity {
-    public static final String EXTRA_CATEGORY_ID = "QuizActivity/EXTRA_CATEGORY_ID";
-    public static final int EXTRA_QUESTION_NUMBER = 0;
     private TextView questionTextDisplay;
-    private int countPoints, countQuestions;
     private Button a, b, c, d;
+    private String correctAnswer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,41 +32,39 @@ public class QuizActivity extends AppCompatActivity {
         c = findViewById(R.id.quiz_answer_three);
         d = findViewById(R.id.quiz_answer_four);
 
-        Bundle bundle = getIntent().getExtras();
-        if(bundle != null && SelectCategoryActivity.jk == 0){
-            getQuestionsByCategory(bundle.getString(SelectCategoryActivity.EXTRA_CATEGORY_ID),SelectCategoryActivity.jk);
-        }
-        if(bundle != null && SelectCategoryActivity.jk !=0){
-            getQuestionsByCategory(SelectCategoryActivity.dd,SelectCategoryActivity.jk);
-        }
+        getQuestionsByCategory(SelectCategoryActivity.category_id, SelectCategoryActivity.question_counter);
     }
 
-    private void getQuestionsByCategory(String category, int questionNumber){
+    private void getQuestionsByCategory(String category, int questionNumber) {
         Call<List<Question>> listCall = RetrofitProvider.getInstance().getQuestionsByCategory(category);
         listCall.enqueue(new Callback<List<Question>>() {
             @Override
             public void onResponse(Call<List<Question>> call, Response<List<Question>> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     List<Question> questions = response.body();
                     questionTextDisplay.setText(questions.get(questionNumber).getQuestion_text());
-                    if(SelectCategoryActivity.jk == 0) {
+                    if (SelectCategoryActivity.question_counter == 0) {
                         Collections.shuffle(questions);
                     }
-                    //get answers and shhuffle them as well here
-                    ArrayList<String> answers = new ArrayList<String>();
+                    ArrayList<String> answers = new ArrayList<>();
+
                     answers.add(questions.get(questionNumber).getChoice_one());
                     answers.add(questions.get(questionNumber).getChoice_two());
                     answers.add(questions.get(questionNumber).getChoice_three());
                     answers.add(questions.get(questionNumber).getChoice_four());
+
+                    correctAnswer=answers.get(0);
+
                     Collections.shuffle(answers);
+
                     a.setText(answers.get(0));
                     b.setText(answers.get(1));
                     c.setText(answers.get(2));
                     d.setText(answers.get(3));
-                    SelectCategoryActivity.jk++;
+
+                    SelectCategoryActivity.question_counter++;
                 }
             }
-
             @Override
             public void onFailure(Call<List<Question>> call, Throwable t) {
                 t.printStackTrace();
@@ -72,6 +72,46 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+    public void onSubmit(View view){
+        if(SelectCategoryActivity.question_counter <= 4){
+            switch (view.getId()){
+                case R.id.quiz_answer_one:
+                    if(a.getText().equals(correctAnswer)){
+                        SelectCategoryActivity.points_counter+=25;
+                        Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
 
+                case R.id.quiz_answer_two:
+                    if(b.getText().equals(correctAnswer)){
+                        SelectCategoryActivity.points_counter+=25;
+                        Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
 
+                case R.id.quiz_answer_three:
+                    if(c.getText().equals(correctAnswer)){
+                        SelectCategoryActivity.points_counter+=25;
+                        Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+
+                case R.id.quiz_answer_four:
+                    if(d.getText().equals(correctAnswer)){
+                        SelectCategoryActivity.points_counter+=25;
+                        Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+            }
+        }
+
+    }
 }
