@@ -61,8 +61,6 @@ public class QuizActivity extends AppCompatActivity {
                     b.setText(answers.get(1));
                     c.setText(answers.get(2));
                     d.setText(answers.get(3));
-
-                    SelectCategoryActivity.question_counter++;
                 }
             }
             @Override
@@ -73,7 +71,9 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void onSubmit(View view){
-        if(SelectCategoryActivity.question_counter <= 4){
+        Intent intent = new Intent(this, QuizActivity.class);
+        Intent intent2 = new Intent(this, ResultsActivity.class);
+        if(SelectCategoryActivity.question_counter < 4){
             switch (view.getId()){
                 case R.id.quiz_answer_one:
                     if(a.getText().equals(correctAnswer)){
@@ -81,6 +81,12 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
+                    }
+                    if(SelectCategoryActivity.question_counter < 3){
+                        SelectCategoryActivity.question_counter++;
+                        startActivity(intent);
+                    }else{
+                        startActivity(intent2);
                     }
                     break;
 
@@ -91,6 +97,12 @@ public class QuizActivity extends AppCompatActivity {
                     }else{
                         Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
                     }
+                    if(SelectCategoryActivity.question_counter < 3){
+                        SelectCategoryActivity.question_counter++;
+                        startActivity(intent);
+                    }else{
+                        startActivity(intent2);
+                    }
                     break;
 
                 case R.id.quiz_answer_three:
@@ -100,6 +112,12 @@ public class QuizActivity extends AppCompatActivity {
                     }else{
                         Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
                     }
+                    if(SelectCategoryActivity.question_counter < 3){
+                        SelectCategoryActivity.question_counter++;
+                        startActivity(intent);
+                    }else{
+                        startActivity(intent2);
+                    }
                     break;
 
                 case R.id.quiz_answer_four:
@@ -108,6 +126,12 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(this, "Not correct", Toast.LENGTH_SHORT).show();
+                    }
+                    if(SelectCategoryActivity.question_counter < 3){
+                        SelectCategoryActivity.question_counter++;
+                        startActivity(intent);
+                    }else{
+                        startActivity(intent2);
                     }
                     break;
             }

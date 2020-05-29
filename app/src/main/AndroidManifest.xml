@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".ResultsActivity"></activity>
+        <activity android:name=".QuizActivity" />
         <activity android:name=".SelectCategoryActivity" />
         <activity android:name=".QuestionListActivity" />
         <activity android:name=".Admin" />
