@@ -21,9 +21,22 @@ public class SelectCategoryActivity extends AppCompatActivity {
         category_id="Geography";
         startActivity(intent);
     }
+
     public void onHistory(View view){
         Intent intent = new Intent(this, QuizActivity.class);
         category_id="History";
+        startActivity(intent);
+    }
+
+    public void onBook(View view){
+        Intent intent = new Intent(this, QuizActivity.class);
+        category_id="Books";
+        startActivity(intent);
+    }
+
+    public void onMovie(View view){
+        Intent intent = new Intent(this, QuizActivity.class);
+        category_id="Movies";
         startActivity(intent);
     }
 }

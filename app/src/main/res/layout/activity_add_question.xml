@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddQuestion">
+    tools:context=".AddQuestionActivity">
 
     <EditText
         android:id="@+id/editTextAnswer4"
@@ -180,24 +180,26 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextAnswer4" />
 
     <Button
-        android:id="@+id/cancel_button"
+        android:id="@+id/cancel_button_aq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginBottom="32dp"
+        android:background="#F10404"
         android:onClick="onCancel"
         android:text="@string/cancel_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/save_button"
+        android:id="@+id/save_button_aq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="32dp"
+        android:background="#53EC02"
         android:onClick="onSaveClick"
         android:text="@string/save_button"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -43,9 +43,6 @@ public class QuizActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     List<Question> questions = response.body();
                     questionTextDisplay.setText(questions.get(questionNumber).getQuestion_text());
-                    if (SelectCategoryActivity.question_counter == 0) {
-                        Collections.shuffle(questions);
-                    }
                     ArrayList<String> answers = new ArrayList<>();
 
                     answers.add(questions.get(questionNumber).getChoice_one());

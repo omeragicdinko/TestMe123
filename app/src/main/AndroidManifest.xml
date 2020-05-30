@@ -3,7 +3,6 @@
     package="com.example.TestMe">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultsActivity"></activity>
+        <activity android:name=".AdminAccessActivity"></activity>
+        <activity android:name=".ResultsActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".SelectCategoryActivity" />
         <activity android:name=".QuestionListActivity" />
-        <activity android:name=".Admin" />
-        <activity android:name=".AddQuestion" />
+        <activity android:name=".AddQuestionActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

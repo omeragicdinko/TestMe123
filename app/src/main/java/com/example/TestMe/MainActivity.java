@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onAdmin(View view){
-        Intent intent = new Intent(this, Admin.class);
+        Intent intent = new Intent(this, AdminAccessActivity.class);
         startActivity(intent);
     }
     public void onQuiz(View view){

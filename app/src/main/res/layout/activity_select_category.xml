@@ -4,38 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/category"
     tools:context=".SelectCategoryActivity">
 
     <Button
         android:id="@+id/geography_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginRight="162dp"
+        android:layout_marginTop="16dp"
         android:onClick="onGeography"
-        android:text="@string/geograpgy_category_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/availableCategories" />
+        android:text="@string/geography_category_text"
+        app:layout_constraintEnd_toEndOf="@+id/geo_pic"
+        app:layout_constraintStart_toStartOf="@+id/geo_pic"
+        app:layout_constraintTop_toBottomOf="@+id/geo_pic" />
 
     <Button
         android:id="@+id/history_category"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="162dp"
-        android:layout_marginLeft="162dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="161dp"
-        android:layout_marginRight="161dp"
+        android:layout_marginTop="16dp"
         android:onClick="onHistory"
         android:text="@string/history_category_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/geography_category" />
+        app:layout_constraintEnd_toEndOf="@+id/his_pic"
+        app:layout_constraintStart_toStartOf="@+id/his_pic"
+        app:layout_constraintTop_toBottomOf="@+id/his_pic" />
 
     <TextView
         android:id="@+id/availableCategories"
@@ -44,8 +36,83 @@
         android:layout_marginTop="83dp"
         android:text="@string/available_category"
         android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/geo_pic"
+        android:layout_width="165dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="onGeography"
+        app:layout_constraintEnd_toStartOf="@+id/his_pic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/availableCategories"
+        app:srcCompat="@drawable/geo" />
+
+    <ImageView
+        android:id="@+id/his_pic"
+        android:layout_width="171dp"
+        android:layout_height="136dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="onHistory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/geo_pic"
+        app:layout_constraintTop_toBottomOf="@+id/availableCategories"
+        app:srcCompat="@drawable/his" />
+
+    <ImageView
+        android:id="@+id/book_pic"
+        android:layout_width="165dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="32dp"
+        android:onClick="onBook"
+        app:layout_constraintEnd_toEndOf="@+id/geography_category"
+        app:layout_constraintStart_toStartOf="@+id/geography_category"
+        app:layout_constraintTop_toBottomOf="@+id/geography_category"
+        app:srcCompat="@drawable/books" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onBook"
+        android:text="@string/books_category_text"
+        app:layout_constraintEnd_toEndOf="@+id/book_pic"
+        app:layout_constraintStart_toStartOf="@+id/book_pic"
+        app:layout_constraintTop_toBottomOf="@+id/book_pic" />
+
+    <ImageView
+        android:id="@+id/movie_pic"
+        android:layout_width="165dp"
+        android:layout_height="136dp"
+        android:layout_marginTop="32dp"
+        android:onClick="onMovie"
+        app:layout_constraintEnd_toEndOf="@+id/history_category"
+        app:layout_constraintStart_toStartOf="@+id/history_category"
+        app:layout_constraintTop_toBottomOf="@+id/history_category"
+        app:srcCompat="@drawable/movie" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onMovie"
+        android:text="@string/movies_category_text"
+        app:layout_constraintEnd_toEndOf="@+id/movie_pic"
+        app:layout_constraintStart_toStartOf="@+id/movie_pic"
+        app:layout_constraintTop_toBottomOf="@+id/movie_pic" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

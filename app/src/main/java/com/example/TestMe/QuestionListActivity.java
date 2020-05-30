@@ -8,9 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import java.io.Console;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,7 +28,7 @@ public class QuestionListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int post_id = (int) parent.getItemIdAtPosition(position);
-                Intent intent = new Intent(QuestionListActivity.this,AddQuestion.class);
+                Intent intent = new Intent(QuestionListActivity.this, AddQuestionActivity.class);
                 intent.putExtra(EXTRA_QUESTION_ID,post_id);
                 startActivity(intent);
             }
@@ -55,5 +53,9 @@ public class QuestionListActivity extends AppCompatActivity {
                 Log.e("beaj","belaj");
             }
         });
+    }
+    public void onAdd(View view){
+        Intent intent = new Intent(this, AddQuestionActivity.class);
+        startActivity(intent);
     }
 }
