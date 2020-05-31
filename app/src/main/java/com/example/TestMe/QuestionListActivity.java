@@ -54,8 +54,14 @@ public class QuestionListActivity extends AppCompatActivity {
             }
         });
     }
+
     public void onAdd(View view){
         Intent intent = new Intent(this, AddQuestionActivity.class);
+        startActivity(intent);
+    }
+
+    public void onHome(View view){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

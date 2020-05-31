@@ -68,15 +68,13 @@ public class AddQuestionActivity extends AppCompatActivity {
                         });
                     }
                 }
-
                 @Override
                 public void onFailure(Call<Question> call, Throwable t) {
                     t.printStackTrace();
                 }
             });
-
         }else{
-            Question question = new Question(9,questionText.getText().toString(),choice_one.getText().toString(),choice_two.getText().toString(),choice_three.getText().toString(),choice_four.getText().toString(),category.getText().toString());
+            Question question = new Question(17,questionText.getText().toString(),choice_one.getText().toString(),choice_two.getText().toString(),choice_three.getText().toString(),choice_four.getText().toString(),category.getText().toString());
             Call<Question> questionCall = RetrofitProvider.getInstance().addNewQuestion(question);
             questionCall.enqueue(new Callback<Question>() {
                 @Override
@@ -88,9 +86,7 @@ public class AddQuestionActivity extends AppCompatActivity {
                     }
                 }
                 @Override
-                public void onFailure(Call<Question> call, Throwable t) {
-                    t.printStackTrace();
-                }
+                public void onFailure(Call<Question> call, Throwable t) { t.printStackTrace(); }
             });
         }
 
@@ -121,7 +117,6 @@ public class AddQuestionActivity extends AppCompatActivity {
                         });
                     }
                 }
-
                 @Override
                 public void onFailure(Call<Question> call, Throwable t) {
                     t.printStackTrace();
