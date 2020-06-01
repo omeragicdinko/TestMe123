@@ -14,7 +14,11 @@
         <activity android:name=".AdminAccessActivity"></activity>
         <activity android:name=".ResultsActivity" />
         <activity android:name=".QuizActivity" />
-        <activity android:name=".SelectCategoryActivity" />
+        <activity android:name=".SelectCategoryActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.TestMe.MainActivity" />
+        </activity>
         <activity android:name=".QuestionListActivity" />
         <activity android:name=".AddQuestionActivity" />
         <activity android:name=".MainActivity">

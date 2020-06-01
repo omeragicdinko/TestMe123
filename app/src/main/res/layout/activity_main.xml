@@ -9,18 +9,13 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="241dp"
+        android:layout_width="wrap_content"
         android:layout_height="70dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:layout_marginEnd="85dp"
-        android:layout_marginRight="85dp"
         android:onClick="onQuiz"
         android:text="@string/test_me"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
